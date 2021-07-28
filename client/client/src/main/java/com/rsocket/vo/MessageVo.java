@@ -1,26 +1,7 @@
-/* ====================================================================================================
- * Project Name     [rsocket]
- * File Name        [com.rsocket.vo.MessageVo.java]
- * Creation Date    [2021-07-14]
- *
- * Copyright© 2021 瑞声科技[AAC Technologies Holdings] All Rights Reserved
- *
- * ====================================================================================================
- * Change Log
- * ====================================================================================================
- * 2021-07-14     潘凌云      [Init] .
- * ==================================================================================================== */
 package com.rsocket.vo;
 
 import java.io.Serializable;
 
-/**
- * <p></p>
- *
- * @author <a href="mailto:panlingyun@aactechnologies.com">潘凌云</a>
- * @version 1.0.0
- * @since jdk 1.8
- */
 public class MessageVo implements Serializable {
 
     private static final long serialVersionUID = 3786010263098567267L;

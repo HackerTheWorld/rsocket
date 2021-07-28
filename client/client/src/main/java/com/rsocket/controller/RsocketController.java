@@ -1,15 +1,3 @@
-/* ====================================================================================================
- * Project Name     [rsocket]
- * File Name        [com.rsocket.controller.RsocketController.java]
- * Creation Date    [2021-07-14]
- *
- * Copyright© 2021 瑞声科技[AAC Technologies Holdings] All Rights Reserved
- *
- * ====================================================================================================
- * Change Log
- * ====================================================================================================
- * 2021-07-14     潘凌云      [Init] .
- * ==================================================================================================== */
 package com.rsocket.controller;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
@@ -23,15 +11,7 @@ import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 
-/**
- * <p></p>
- *
- * @author <a href="mailto:panlingyun@aactechnologies.com">潘凌云</a>
- * @version 1.0.0
- * @since jdk 1.8
- */
 @Controller
-@RequestMapping("rsocket")
 public class RsocketController {
 
     /**
