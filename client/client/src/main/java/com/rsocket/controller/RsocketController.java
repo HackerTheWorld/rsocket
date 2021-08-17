@@ -43,10 +43,9 @@ public class RsocketController {
     @MessageMapping("stream")
     Flux<String> stream(String request) {
         System.out.println(request);
-
         return Flux
             .create(e -> {
-                new Thread(new RunableInter(e)).start();
+                new Thread(new RunnableInter(e)).start();
             }).map(index -> index+request);
     }
 
@@ -56,17 +55,11 @@ public class RsocketController {
      * @return
      */
     @MessageMapping("channel")
-    Flux<MessageVo> channel(final Flux<String> settings) {
-        return Flux.create(e -> {
-            settings.subscribe(str -> {
-                MessageVo messageVo = new MessageVo();
-                messageVo.setFrom("server");
-                messageVo.setMessage(str+"::server");
-                messageVo.setTo("client");
-                e.next(messageVo);
-                e.complete();
-            });
-        });
+    Flux<MessageVo> channel(final Flux<MessageVo> settings) {
+        settings.subscribe(str ->
+            System.out.println("from::"+str.getFrom()+"  to::"+str.getTo()+"=="+str.getMessage()));
+
+        return Flux.create(e -> new Thread(new RunnableInterMessage(e)).start());
     }
 
 }

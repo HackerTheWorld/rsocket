@@ -3,11 +3,11 @@ package com.rsocket.controller;
 import reactor.core.publisher.FluxSink;
 
 
-public class RunableInter  implements Runnable{
+public class RunnableInter implements Runnable{
 
     private FluxSink fluxSink;
 
-    public RunableInter(FluxSink fluxSink){
+    public RunnableInter(FluxSink fluxSink){
         this.fluxSink = fluxSink;
     }
 
@@ -15,6 +15,11 @@ public class RunableInter  implements Runnable{
     public void run() {
         int i =0;
         while (true){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             fluxSink.next(i+++"test");
         }
 
